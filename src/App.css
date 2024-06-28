@@ -54,6 +54,7 @@
   border-radius: 15px;
   padding: 20px;
   overflow: hidden;
+  padding-bottom: 10px;
 }
 
 .card img {
@@ -82,12 +83,32 @@ h1 {
   color: #042b36;
 }
 
+.cart-card {
+  border: 5px solid #7d7574;
+  padding: 30px 10px 20px;
+  border-radius: 8px;
+  box-shadow: -3px 5px 34px rgba(10, 10, 10, 0.67);
+}
+
+.cart-next {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.cart-empty {
+  color: #232424;
+  font-style: italic;
+  font-size: 30px;
+  text-align: center;
+}
+
 .buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
   text-align: center;
-}
+} 
 
 .button {
   min-width: 100px;
@@ -97,4 +118,4 @@ h1 {
   align-items: center;
   white-space: nowrap;
   overflow: hidden;
-}
+} 
