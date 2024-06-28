@@ -1,3 +1,5 @@
 export function Button({ text, style }) {
-    return <button style={style}>{text}</button>;
+    return <button style={style}>{text} </button>;
 }
+
+
