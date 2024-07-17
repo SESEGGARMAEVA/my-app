@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-//import logo from './logo.svg';
 import './App.css';
 import { Button } from './components/Button';
+import { ProductCard } from './components/ProductCard/ProductCard';
+import { useCart } from './store/cart';
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const { cart, setCart, removeItem } = useCart()
 
-  const cartSum = cart.reduce((acc, item) => acc + item.price, 0);
+
+
   const menu = [
     {
       name: "Tteokbokki",
@@ -38,13 +40,14 @@ function App() {
           <>
             <ul>
               {cart.map((item) => (
-                <li>
+                <li key={item.name} >
                   {item.name} - {item.price} руб
+                  <button onClick={() => removeItem(item)}>Удалить</button>
                 </li>
               ))}
             </ul>
             <div className="cart-next">
-              <button> Далее {cartSum} руб</button>
+              {/* <button> Далее {cartSum} руб</button> */}
             </div>
           </>
         ) : (
@@ -54,63 +57,15 @@ function App() {
 
       <h1>Популярные блюда</h1>
       <div className="menu">
-        {menu.map(function (item) {
-          return (
-            <div className="card" key={item.name}>
-              <img src={item.image} alt={item.name} />
-              <h2>{item.name}</h2>
-              <div>Цена: {item.price} руб</div>
-              <p>{item.description}</p>
-
-              <button
-                style={{
-                  fontSize: "20px",
-                  width: "95%",
-                  borderRadius: "5px",
-                  backgroundColor: "green",
-                  margin: "15px 20px 0 5px",
-                  padding: "10px 20px",
-                  marginTop: "20"
-
-                }}
-                onClick={() => {
-                  setCart([...cart, item]);
-                }}
-              >
-                Добавить в корзину
-              </button>
-
-              <div className="buttons">
-                {/* <Button
-                  text="В корзину"
-                  style={{
-                    fontSize: "20px",
-                    width: "40%",
-                    border: "none",
-                    borderRadius: "8px",
-                    backgroundColor: "orang",
-                    marginRight: "25px"
-                  }}
-                /> */}
-                {/*<Button
-                  text="Купить"
-                  style={{
-                    fontSize: "20px",
-                    width: "40%",
-                    border: "none",
-                    borderRadius: "8px",
-                    backgroundColor: "green",
-                    marginRight: "25px"
-                  }}
-                /> */}
-              </div>
-            </div>
-          );
-        })}
+        {menu.map((item) => (
+          <ProductCard item={item} key={item.name} />
+        ))}
       </div>
+
     </div>
   );
 }
+
 
 
 export default App;
