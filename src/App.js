@@ -2,67 +2,24 @@ import React, { useState } from 'react';
 import './App.css';
 import { Button } from './components/Button';
 import { ProductCard } from './components/ProductCard/ProductCard';
-import { useCart } from './store/cart';
+import { CartWidget } from './components/CartWidget/CartWidget';
+import { menu } from './menu';
+
 
 function App() {
-  const { cart, setCart, removeItem } = useCart()
-
-
-
-  const menu = [
-    {
-      name: "Tteokbokki",
-      price: 674,
-      image: "https://n1s1.hsmedia.ru/35/ca/3f/35ca3f9bf3419c0fb49b1203d38fe2fc/1280x1280_0xO8faF4jO_5583004080527022632.jpg",
-      description: "Острые рисовые палочки в насыщенном ароматном соусе."
-    },
-
-    {
-      name: "Kimchi",
-      price: 548,
-      image: "https://korfood.ru/upload/iblock/4a0/z5d19idqctzxu3d266pt09vn4bfrrbqi/gotovim_kimchi_po_koreyski.jpg",
-      description: "Кимчи из пекинской капусты, заправленный пастой из трав."
-    },
-
-    {
-      name: "Bulgogi",
-      price: 776,
-      image: "https://static.1000.menu/img/content-v2/9c/89/39026/pulkogi-iz-govyadiny_1568882821_1_max.jpg",
-      description: "Блюдо из тонких маринованных ломтиков говядины и свинины."
-    }
-  ];
-
   return (
     <div className="App">
       <div className="cart-card">
-        <h2>Корзина:</h2>
-        {cart.length > 0 ? (
-          <>
-            <ul>
-              {cart.map((item) => (
-                <li key={item.name} >
-                  {item.name} - {item.price} руб
-                  <button onClick={() => removeItem(item)}>Удалить</button>
-                </li>
-              ))}
-            </ul>
-            <div className="cart-next">
-              {/* <button> Далее {cartSum} руб</button> */}
-            </div>
-          </>
-        ) : (
-          <div className="cart-empty"> В вашей корзине пока пусто </div>
-        )}
-      </div>
+        <h1>Корейские блюда</h1>
+        <CartWidget />
+        <div className="menu">
+          {menu.map((item) => (
+            <ProductCard item={item} key={item.name} />
+          ))}
+        </div>
 
-      <h1>Популярные блюда</h1>
-      <div className="menu">
-        {menu.map((item) => (
-          <ProductCard item={item} key={item.name} />
-        ))}
       </div>
-
-    </div>
+    </div >
   );
 }
 

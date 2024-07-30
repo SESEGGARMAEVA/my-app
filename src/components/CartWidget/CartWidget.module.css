@@ -1,0 +1,12 @@
+.widget {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+}
+
+.container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
