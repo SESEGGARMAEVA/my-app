@@ -17,7 +17,6 @@ function App() {
             <ProductCard item={item} key={item.name} />
           ))}
         </div>
-
       </div>
     </div >
   );
