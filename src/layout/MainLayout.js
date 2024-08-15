@@ -5,12 +5,15 @@ import { Link } from "react-router-dom";
 
 export function MainLayout() {
     return (
-        <div>
-            <header>
-                <h1> Мой ресторан </h1>
-                <CartWidget />
-
-            </header>
+        <div className="min-h-screen flex-col justify-between" >
+            <div className="sticky top-0 p-4 border-b border-black backdrop-blur bg-whaite/50">
+                <header className="container mx- auto flex justify-between p-4" >
+                    <Link className="text-2xl font-bold" href="/">
+                        CLOVER
+                    </Link>
+                    <CartWidget />
+                </header>
+            </div>
             <main>
                 <div>
                     <Outlet />
@@ -20,7 +23,7 @@ export function MainLayout() {
                 <nav>
                     <Link to="/about"> О нас</Link>
                 </nav>
-                <p> 2024 Sara</p>
+                <p className="bg-gray-800 text-white">2024 Sara</p>
             </footer>
         </div>
     );

@@ -8,11 +8,11 @@ import { menu } from './menu';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container mx-auto flex-col gap-4 py-4">
       <div className="cart-card">
-        <h1>Корейские блюда</h1>
+        <h1 className="text--lg">Меню ресторана CLOVER</h1>
         <CartWidget />
-        <div className="menu">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
           {menu.map((item) => (
             <ProductCard item={item} key={item.name} />
           ))}

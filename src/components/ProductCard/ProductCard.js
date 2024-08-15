@@ -1,28 +1,37 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../../store/cart";
-import style from "./ProductCard.module.css";
+import { CartSvg } from "../../svg/CartSvg";
 
 
 export function ProductCard({ item }) {
     const { addItem } = useCart();
     return (
 
-        <div className={style.card} >
-            <Link to={`products/${item.name}`}>
-                <img src={item.image} alt={item.name} className={style.image} />
+        <div className=" shadow rounded-lg overflow-hidden hoder=shadow-2xl transition duration-500" >
+            <Link to={`products/${item.name}`} >
+                <div className="overflow-hidden">
+                    <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full hover:scale-[110%] transition duration-500" />
+                </div>
             </Link>
-            <h2>{item.name}</h2>
-            <div>Цена: {item.price} руб</div>
-            <p>{item.description}</p>
 
-            <button
-                className={style.button}
-                onClick={() => {
-                    addItem(item);
-                }}
-            >
-                Добавить в корзину
-            </button>
+            <div className="flex justify-between p-3 items-center">
+                <h2 className="font-bold">{item.name}</h2>
+                <div className="flex gap-2 items-center">
+                    <div>Цена: {item.price} руб</div>
+                    <button
+                        onClick={() => {
+                            addItem(item);
+                        }}
+                        className="bg-green-500 p-2 rounded hover:bg-green-300 transition"
+                    >
+                        <CartSvg className="w-5 h-5 text-white" />
+                    </button>
+                </div>
+            </div>
+            <p>{item.description}</p>
         </div>
     )
 }
