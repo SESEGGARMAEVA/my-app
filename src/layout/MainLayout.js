@@ -3,11 +3,12 @@ import { CartWidget } from "../components/CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
 
+
 export function MainLayout() {
     return (
-        <div className="min-h-screen flex-col justify-between" >
-            <div className="sticky top-0 p-4 border-b border-black backdrop-blur bg-whaite/50">
-                <header className="container mx- auto flex justify-between p-4" >
+        <div className="min-h-screen flex flex-col justify-between" >
+            <div className="sticky top-0 p-4 border-b border-black backdrop-blur bg-white/50" >
+                <header className="container mx-auto flex justify-between p-4" >
                     <Link className="text-2xl font-bold" href="/">
                         CLOVER
                     </Link>
