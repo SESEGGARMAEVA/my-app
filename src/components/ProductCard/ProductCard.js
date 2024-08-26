@@ -9,16 +9,16 @@ export function ProductCard({ item }) {
     const { addItem } = useCart();
     const [clicked, setCliked] = useState(false);
     return (
-        <div className="relative shadow rounded-lg overflow-hidden hoder=shadow-2xl transition duration-500" >
-            <Link to={`products/${item.name}`} >
-                <div className="overflow-hidden">
+        <div className="relative shadow rounded-lg overflow-hidden hover=shadow-2xl transition duration-500" >
+            <Link to={`products/${item.name}`}>
+                <div className="overflow-hidden aspect-square">
                     <img
                         src={item.image}
                         alt={item.name}
-                        className="w-full hover:scale-[110%] transition duration-500" />
+                        className="w-full h-full object-cover hover:scale-[110%] transition duration-500" />
                 </div>
 
-                <div className="absolute botton-0 flex justify-between p-3 items-center w-full text-black bg-[linear-gradient(to_top,#000000,rgba(0,0,0,0))]">
+                <div className="absolute bottom-0 flex justify-between p-3 items-center w-full text-white bg-[linear-gradient(to_top,#000000,rgba(0,0,0,0))]">
                     <h2 className="font-bold">{item.name}</h2>
                     <div className="flex gap-2 items-center">
                         <div>Цена: {item.price} руб</div>
@@ -37,7 +37,7 @@ export function ProductCard({ item }) {
                         >
                             {clicked ? <CheckIcon /> : <CartSvg className="w-5 h-5" />}
                         </button>
-                    </div>
+                    </div> 
                 </div>
                 <p>{item.description}</p>
             </Link >

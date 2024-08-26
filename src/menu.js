@@ -2,7 +2,7 @@ export const menu = [
   {
     name: "Tteokbokki",
     price: 674,
-    image: "https://n1s1.hsmedia.ru/35/ca/3f/35ca3f9bf3419c0fb49b1203d38fe2fc/1280x1280_0xO8faF4jO_5583004080527022632.jpg",
+    image: "https://korfood.ru/upload/iblock/8a5/effuf1h8uakcyi1hxnxnisw4dluyo4m8/tokpokki_legendarnoe_koreyskoe_blyudo_teper_i_v_rossii.jpg",
     //description: "Острые рисовые палочки в насыщенном ароматном соусе."
   },
 
@@ -16,7 +16,7 @@ export const menu = [
   {
     name: "Bulgogi",
     price: 776,
-    image: "https://static.1000.menu/img/content-v2/9c/89/39026/pulkogi-iz-govyadiny_1568882821_1_max.jpg",
+    image: "https://images.prom.ua/5598914389_w600_h600_5598914389.jpg",
     //description: "Блюдо из тонких маринованных ломтиков говядины и свинины."
   },
 
@@ -30,14 +30,14 @@ export const menu = [
   {
     name: "Japchae",
     price: 479,
-    image: "https://grandkulinar.ru/uploads/posts/2023-09/1695536195_chapchkheh.jpg",
+    image: "https://www.asiarestauran.ru/wp-content/uploads/5-78805.jpg",
     //description: "Закуска из овощей, грибов, зелени, крахмальной лапшой в соусе."
   },
 
   {
     name: "Kuksu",
     price: 530,
-    image: "https://n1s1.hsmedia.ru/34/a8/b1/34a8b1758ac99b69e0259a9983a6e1ce/1499x1499_0x8hKRfo5Z_1997680397050691633.jpg",
+    image: "http://asianew.ru/d/img_5689_2.jpg",
     //description: "Суп из специального бульона Мури в холодном виде с овощами и мясом."
   }
 ];
