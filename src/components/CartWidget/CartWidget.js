@@ -19,7 +19,7 @@ export function CartWidget() {
                 <div className="relative">
                     <CartSvg className="w-8 h-8" />
                     {cart.length > 0 && (
-                        <div className={"absolute -top-2 -right-2 bg-red-400 text-smtext-white w-5 h-5 flex justify-center items-center rounded-full fond-bold transition " + 
+                        <div className={"absolute -top-2 -right-2 bg-red-400 text-sm text-white w-5 h-5 flex justify-center items-center rounded-full fond-bold transition " + 
                         (changed ? "scale-[150%]" : "scale-[100%]")}>
                             {cart.length}
                         </div>
