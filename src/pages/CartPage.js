@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useCart } from '../store/cart';
 
 export function CartPage() {
@@ -17,6 +18,7 @@ export function CartPage() {
                     </ul>
                     <div className="cart-next">
                         {/* <button> Далее {cartSum} руб</button> */}
+                        <Link to={ "/checkout" }>Оформить заказ</Link>
                     </div>
                 </>
             ) : (

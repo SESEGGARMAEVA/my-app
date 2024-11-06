@@ -9,6 +9,7 @@ import { MainLayout } from './layout/MainLayout';
 import { ProductPage } from './pages/ProductPage';
 import AboutPage from './pages/AboutPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Checkout } from './pages/Checkout';
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutPage />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
       },
     ],
   },
